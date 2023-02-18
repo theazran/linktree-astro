@@ -1,0 +1,91 @@
+---
+const links = [
+  {
+    name: "Blog",
+    url: "https://azran.my.id",
+  },
+  {
+    name: "Vite Digital Invitation",
+    url: "https://vite.co.id",
+  },
+  {
+    name: "WhatsApp Gateway",
+    url: "https://wa.notfiku.my.id",
+  },
+];
+
+const socialLinks = [
+  ,
+  {
+    name: "Instagram",
+    url: "https://instagram.com/theazran_",
+    image: "https://cdn.simpleicons.org/instagram/white",
+  },
+  {
+    name: "Facebook",
+    url: "https://facebook.com/theazran",
+    image: "https://cdn.simpleicons.org/facebook/white",
+  },
+  {
+    name: "Github",
+    url: "https://github.com/theazran",
+    image: "https://cdn.simpleicons.org/github/white",
+  },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>M ASRAN</title>
+  </head>
+  <body class="bg-gradient-to-b from-cyan-50 bg-cyan-800">
+    <main
+      class="max-w-sm w-screen flex-col h-screen mx-auto shadow-lg py-20 px-5 flex justify-items-stretch justify-center"
+    >
+      <div
+        class="kotak rounded-lg w-[150px] min-h-[150px] h-[150px] self-center"
+      >
+        <img
+          class="w-full h-full rounded-full"
+          src="https://user-images.githubusercontent.com/62879334/219256906-39c29d7f-1013-41e8-9c39-d90f9f40c800.jpeg"
+          alt=""
+        />
+      </div>
+      <div class="flex text-cyan-50 flex-col items-center mt-8">
+        <h1 class="text-2xl font-semibold">M ASRAN</h1>
+        <p>Programer Enthusiast</p>
+      </div>
+      <ul class="mt-10 space-y-3 text-center">
+        {
+          links.map((link) => (
+            <li class="hover:-translate-y-1 transition duration-150 hover:shadow">
+              <a href={link.url}>
+                <div class="kotak w-full px-10 text-lg bg-cyan-700 p-5 py-6 font-semibold text-white tracking-wide rounded-lg hover:bg-cyan-800 duration-150">
+                  {link.name}
+                </div>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+
+      <ul class="flex mt-10 justify-center space-x-4">
+        {
+          socialLinks.map((link) => (
+            <li class="hover:-translate-y-1 duration-100">
+              <a href={link?.url}>
+                <div class="rounded-full w-[60px] h-[60px] p-3 border-2  hover:bg-cyan-800 border-cyan-700 bg-cyan-900">
+                  <img src={link?.image} alt="" />
+                </div>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </main>
+  </body>
+</html>
